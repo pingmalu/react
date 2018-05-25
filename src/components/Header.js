@@ -6,7 +6,7 @@ export default class Header extends Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
-            <h1>目录</h1>
+            <h1>目录 | 测试</h1>
               { true ? 'Malu.me':'hello'}
           </div>
         </div>
