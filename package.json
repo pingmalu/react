@@ -1,7 +1,7 @@
 {
   "name": "hello-react",
   "version": "0.1.0",
-  "homepage": "https://pingmalu.github.io/react_tmp_01",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "react": "^16.4.0",
