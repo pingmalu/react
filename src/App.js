@@ -11,7 +11,7 @@ import About from './components/About';
 class App extends Component {
   render() {
     return (
-        <Router>
+        <Router basename="/react_tmp_01">
             <div>
                 <Route exact path="/" component={Home}/>
                 <Route path="/header" component={Header}/>
