@@ -1,34 +1,24 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
-import Header from './components/Header';
+import Navbar from "./components/Navbar";
+
 import Home from './components/Home';
+import Header from './components/Header';
+import About from './components/About';
+
 
 class App extends Component {
   render() {
-      const user = {
-          name :"anan",
-          hobbies: ["sport","reading"],
-      };
     return (
-      <div className="container">
-          <div className="row">
-              <div className="col-xs-1 col-xs-offset-11">
-                  <Header/>
-              </div>
-          </div>
-        <div className="row">
-          <div className="col-xs-1 col-xs-offset-11">
-            <h1>hello</h1>
-          </div>
-        </div>
-          <div className="row">
-              <div className="col-xs-1 col-xs-offset-11">
-                  <Home name={"max"} initialage={12} user={user}>
-                      <p>hihi malu</p>
-                  </Home>
-              </div>
-          </div>
-      </div>
+        <Router>
+            <div>
+                {/*<Navbar/>*/}
+                <Route exact path="/" component={Home}/>
+                <Route path="/header" component={Header}/>
+                <Route path="/about" component={About}/>
+            </div>
+        </Router>
     );
   }
 }

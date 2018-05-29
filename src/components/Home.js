@@ -1,48 +1,46 @@
 import React, { Component } from 'react';
-
-import PropTypes from 'prop-types';
+import axios from 'axios';
+import './Home.css'
 
 export default class Home extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            age: props.initialage
-        }
-        //this.age = this.props.age;
-    };
-    onMakeOlder() {
-        this.setState({
-            age: this.state.age += 3
-        });
-        //this.age += 3;
-        console.log(this);
-    };
-  render() {
-      console.log(this.props);
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-1 col-xs-offset-11">
-              <div>your name is {this.props.name}, your age is {this.state.age}</div>
-              <button onClick={() => {this.onMakeOlder()}} className="btn btn-primary">Make me older</button>
-              <div>
-                  <h4>hobbies</h4>
-                  <ul>
-                      {this.props.user.hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}
-                  </ul>
-                  {this.props.children}
-              </div>
-          </div>
-        </div>
+    constructor(){
+        super();
+        this.state={
+            ipt: '',
+            arr: []
+        };
+        this.input_change= this.input_change.bind(this);
+    }
 
-      </div>
-    );
-  }
+    input_change(ev){
+        let SEARCH_URL = 'http://malu.me/api/search/';
+        axios.get(SEARCH_URL+ev.target.value)
+            .then(res =>{
+                console.log(res.data);
+                this.setState({
+                    arr: res.data.records
+                })
+            }).catch(function (error) {
+                console.log(error);
+            });
+    }
+    render() {
+        var li_list = '';
+        if(this.state.arr instanceof Array){
+            li_list = this.state.arr.map((val,index)=>{
+                return (
+                    <li className="list-item" key={index}><a href={val.url} title={val.summary}> {val.title.replace('– 萌马笔记 – 因为记性差，所以记笔记','')}</a></li>
+                )
+            });
+        }
+        return (
+          <div className="container m_input_search">
+              <input onChange={this.input_change}/>
+              <ul>
+                  {li_list}
+              </ul>
+          </div>
+        );
+    }
 }
 
-Home.propTypes = {
-  name: PropTypes.string,
-  age: PropTypes.number,
-  user: PropTypes.object,
-  children: PropTypes.element.isRequired
-};

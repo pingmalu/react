@@ -10,7 +10,6 @@ export default class Header extends Component {
               { true ? 'Malu.me':'hello'}
           </div>
         </div>
-
       </div>
     );
   }
