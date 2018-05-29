@@ -25,7 +25,7 @@ export default class Home extends Component {
             });
     }
     render() {
-        var li_list = '';
+        let li_list = '';
         if(this.state.arr instanceof Array){
             li_list = this.state.arr.map((val,index)=>{
                 return (
