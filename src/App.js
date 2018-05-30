@@ -10,15 +10,27 @@ import About from './components/About';
 
 class App extends Component {
   render() {
-    return (
-        <Router basename="/react_tmp_01">
-            <div>
-                <Route exact path="/" component={Home}/>
-                <Route path="/header" component={Header}/>
-                <Route path="/about" component={About}/>
-            </div>
-        </Router>
-    );
+      let b_name = '';
+      // if(document.domain === 'pingmalu.github.io' || document.domain === 'git.malu.me'){
+      //       b_name = '/react_tmp_01';
+      // }
+      let m_domain_arr = ['pingmalu.github.io','git.malu.me'];
+      let m_domain_arr2 = ['cloud.localhost'];
+      if(m_domain_arr.includes(document.domain)){
+          b_name = '/react_tmp_01';
+      }else if(m_domain_arr2.includes(document.domain)) {
+          b_name = '/Work/nodejs/react/1/hello-react/build';
+      }
+      return (
+          <Router basename={b_name}>
+              <div>
+                  <Navbar/>
+                  <Route exact path="/" component={Home}/>
+                  <Route path="/header" component={Header}/>
+                  <Route path="/about" component={About}/>
+              </div>
+          </Router>
+      );
   }
 }
 
