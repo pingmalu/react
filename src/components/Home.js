@@ -29,7 +29,7 @@ export default class Home extends Component {
         if(this.state.arr instanceof Array){
             li_list = this.state.arr.map((val,index)=>{
                 return (
-                    <li className="list-item" key={index}><a href={val.url} title={val.summary}> {val.title.replace('– 萌马笔记 – 因为记性差，所以记笔记','')}</a></li>
+                    <li className="list-item" key={index}><a href={val.url} title={val.summary}> {val.title.replace('– 萌马笔记 – 因为记性差，所以记笔记','')}  <span className="m-span">{val.summary}</span></a></li>
                 )
             });
         }

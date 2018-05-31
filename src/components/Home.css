@@ -27,6 +27,12 @@
     word-wrap: normal;
     max-width: 100%;
 }
+.list-item a {
+    color: #505050;
+}
+.m-span {
+    color: #d4d7e1;
+}
 .m_input_search ul {
     margin: 0;
     padding: 0;
