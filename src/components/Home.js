@@ -27,11 +27,9 @@ export default class Home extends Component {
 
     input_change(ev){
         //console.log(ev.target.value.length);
-        /*
-        if(ev.target.value.length > 1){
-            this.state.source.cancel('test');
+        if(ev.target.value.length <= 0){
+            return
         }
-        */
         let SEARCH_URL = 'http://malu.me/api/search/'+ev.target.value;
         if(this.state.geting) {  //之前有处理中的，先取消再重新初始化
             this.setState({
