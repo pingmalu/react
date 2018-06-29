@@ -10,14 +10,14 @@ export default class Navbar extends Component {
                     <div className="container">
                         <ul className="d-flex list-style-none">
                             <li className="ml-4">
-                                <Link to="/" className="HeaderNavlink">首页</Link>
+                                <Link to="/" className="HeaderNavlink">Home</Link>
                             </li>
                             {/*<li>
                                 <Link to="/header">header</Link>
                             </li>
                             */}
                             <li className="ml-4">
-                                <Link to="/about" className="HeaderNavlink">关于</Link>
+                                <Link to="/about" className="HeaderNavlink">About</Link>
                             </li>
                         </ul>
                     </div>
