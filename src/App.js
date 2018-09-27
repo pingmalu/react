@@ -17,7 +17,7 @@ class App extends Component {
       let m_domain_arr = ['pingmalu.github.io','git.malu.me'];
       let m_domain_arr2 = ['cloud.localhost'];
       if(m_domain_arr.includes(document.domain)){
-          b_name = '/react_tmp_01';
+          b_name = '/react';
       }else if(m_domain_arr2.includes(document.domain)) {
           b_name = '/Work/nodejs/react/1/hello-react/build';
       }
