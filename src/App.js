@@ -19,7 +19,7 @@ class App extends Component {
       if(m_domain_arr.includes(document.domain)){
           b_name = '/react';
       }else if(m_domain_arr2.includes(document.domain)) {
-          b_name = '/Work/nodejs/react/1/hello-react/build';
+          b_name = '/github/react/build';
       }
       return (
           <Router basename={b_name}>
