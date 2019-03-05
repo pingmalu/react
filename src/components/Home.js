@@ -30,7 +30,7 @@ export default class Home extends Component {
         if(ev.target.value.length <= 0){
             return
         }
-        let SEARCH_URL = 'http://malu.me/api/search/'+ev.target.value;
+        let SEARCH_URL = '//malu.me/api/search/'+ev.target.value;
         if(this.state.geting) {  //之前有处理中的，先取消再重新初始化
             this.setState({
                 geting: false
